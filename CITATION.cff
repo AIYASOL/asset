@@ -1,15 +1,14 @@
 cff-version: 1.2.0
-title: Solana Agent Kit
+title: AIYA
 message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+  The Essence of Artificial Intelligence
 type: software
 authors:
   - name: SendAI
-repository-code: 'https://github.com/sendaifun/solana-agent-kit'
-url: 'https://github.com/sendaifun/solana-agent-kit'
+repository-code: 'https://github.com/AIYASOL/asset'
+url: 'https://github.com/AIYASOL/asset'
 abstract: >-
-  Connect any AI Agents to Solana Protocols
+  The Essence of Artificial Intelligence
 keywords:
   - solana
   - blockchain
@@ -20,12 +19,12 @@ license: Apache-2.0
 version: 1.2.0
 preferred-citation:
   type: software
-  title: Solana Agent Kit
-  abstract: Connect any AI Agents to Solana Protocols
+  title: AIYA
+  abstract: The Essence of Artificial Intelligence
   version: 1.2.0
-  date-released: '2024-12-21'
+  date-released: '2024-11-05'
   license: Apache-2.0
-  url: 'https://github.com/sendaifun/solana-agent-kit'
-  repository-code: 'https://github.com/sendaifun/solana-agent-kit'
+  url: 'https://github.com/AIYASOL/asset'
+  repository-code: 'https://github.com/AIYASOL/asset'
   authors:
   - name: SendAI
