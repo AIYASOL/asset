@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# AIYA Web Connection with X Social Setup Script
+
+# Step 1: Install required libraries
+sudo apt-get update
+sudo apt-get install -y curl jq
+
+# Step 2: Prompt user for X Social API credentials
+read -p "Enter your X Social API Key: " X_API_KEY
+read -p "Enter your X Social API Secret: " X_API_SECRET
+
+# Step 3: Store credentials securely
+mkdir -p ~/.aiya
+cat > ~/.aiya/xsocial_credentials << EOF
+X_API_KEY=${X_API_KEY}
+X_API_SECRET=${X_API_SECRET}
+EOF
+chmod 600 ~/.aiya/xsocial_credentials
+
+# Step 4: Create a Python script for interaction with X Social
+cat > aiya_xsocial_integration.py << "EOF"
+import os
+import requests
+
+def get_credentials():
+    """Retrieve stored API credentials."""
+    credentials_file = os.path.expanduser("~/.aiya/xsocial_credentials")
+    with open(credentials_file, "r") as file:
+        creds = {}
+        for line in file:
+            key, value = line.strip().split("=")
+            creds[key] = value
+        return creds
+
+def post_to_x_social(content):
+    """Post a message to X Social."""
+    creds = get_credentials()
+    headers = {
+        "Authorization": f"Bearer {creds['X_API_KEY']}:{creds['X_API_SECRET']}",
+        "Content-Type": "application/json"
+    }
+    payload = {"status": content}
+    response = requests.post("https://api.xsocial.com/v1/post", json=payload, headers=headers)
+    if response.status_code == 200:
+        print("Post successful.")
+    else:
+        print(f"Failed to post: {response.status_code} {response.text}")
+
+if __name__ == "__main__":
+    message = input("Enter the message to post: ")
+    post_to_x_social(message)
+EOF
+
+# Step 5: Display completion message
+cat << "EOF"
+X Social Web Connection setup is complete.
+
+Your API credentials have been securely stored.
+The Python script 'aiya_xsocial_integration.py' has been created for posting to X Social.
+
+Run the script using:
+  python3 aiya_xsocial_integration.py
+EOF
