@@ -4,7 +4,7 @@ message: >-
   The Essence of Artificial Intelligence
 type: software
 authors:
-  - name: SendAI
+  - name: $AIYA
 repository-code: 'https://github.com/AIYASOL/asset'
 url: 'https://github.com/AIYASOL/asset'
 abstract: >-
@@ -27,4 +27,4 @@ preferred-citation:
   url: 'https://github.com/AIYASOL/asset'
   repository-code: 'https://github.com/AIYASOL/asset'
   authors:
-  - name: SendAI
+  - name: $AIYA
