@@ -1,6 +1,6 @@
 # How to Add Your Own Tool
 
-Extending the **Solana Agent Kit** with custom tools allows you to add specialized functionalities tailored to your needs. This guide walks you through creating and integrating a new tool into the existing framework.
+Extending the Aiya with custom tools allows you to add specialized functionalities tailored to your needs. This guide walks you through creating and integrating a new tool into the existing framework.
 
 ## Overview
 
